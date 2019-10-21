@@ -8,13 +8,13 @@ import './homepage.styles.scss';
 const HomePage=({theme})=>{
 
     
-const mytheme=theme.dark;
+//const mytheme=theme.dark;
 //console.log(mytheme);
 
 return(   
     
     <div className='homepage'>
-        <DirectoryItem>
+        <DirectoryItem myfilter={false}>
                          
 
         </DirectoryItem>

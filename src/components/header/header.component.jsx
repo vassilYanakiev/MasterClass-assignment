@@ -1,44 +1,52 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import {ThemeContext} from '../../App.js';
+import {ThemeContext,LoggedInContext} from '../../App.js';
+import { ReactComponent as LogoutSvg } from '../../assets/logout.svg';
+import { ReactComponent as LogoutSvg2 } from '../../assets/logout2.svg';
+
+import './header.styles.light.scss';
+import './header.styles.dark.scss';
+
+export default function Header () {
 
 
-import './header.styles.scss';
-
-const Header = () => (
+const context=useContext(LoggedInContext);
+return(
 <ThemeContext.Consumer>
-    {({ changeTheme,theme }) => (
-      <div style={theme}>
-        
-          <button onClick={changeTheme}>
-            STYLE
-          </button>
-        
+    {({ themedark,changeTheme }) => (
+      <div className="sticky">
+      <div className={themedark?'headerDark':'headerLight'}>
           
+          <button className="logo-container" onClick={changeTheme}>
+            SWAPP
+          </button>             
        
-        <div className='header'>
-      <div className='options'>
-        <Link className='option' to='/moviepage'>
-          HEADER
-        </Link>
-        </div>
-    </div>
+              <div className="options">
+                <button className="buttonh2">
+                  <Link className='option' to='/episodes'>
+                    Episodes
+                  </Link>
+                </button>
+                <button className="buttonh2">
+                <Link className='option' to='/characters'>
+                    Characters
+                  </Link>
+                </button >
+                <button className="buttonh3" onClick={()=> context.changeLogin()}>
+                { themedark?
+                  (<LogoutSvg />):
+                  (<LogoutSvg2/>)
+                }
+                </button>
+
+            </div>      
+          </div>        
+           
+          </div>
       
-      </div>
+      
+      
     )}
   </ThemeContext.Consumer>
-
-
-  
-   
-  
-  
-
-
-
- 
-);
-
-
-
-export default Header;
+)
+}

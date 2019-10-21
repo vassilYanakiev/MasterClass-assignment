@@ -1,0 +1,65 @@
+
+.headerDark {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;  
+  background-color:gray;
+
+  .logo-container {
+      font-family: 'Galaxy';     
+      color:#FFE300;
+      cursor: pointer;      
+      border: none;
+      background: none;
+      outline: none;
+      font-size:18px;
+      height: 100%;
+      width: 70px;
+      padding-left: 25px;
+  }
+
+  .options {
+    margin-right: 15px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+
+    .buttonh2{
+      
+      background-color: gray;
+      padding: 10px;
+      border: none;    
+      border-color:gray;
+      outline: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .buttonh3{
+      display: flex;
+      height:26px;
+      background-color: gray(47, 48, 49);
+      padding: 0;
+      border: none;    
+      border-color:gray;
+      outline: none;
+      cursor: pointer;
+      border-radius: 3px 3px 3px 3px;
+        
+    }
+    .option {
+      color:#4BD5EE;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  }
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}

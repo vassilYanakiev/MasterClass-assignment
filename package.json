@@ -2,17 +2,21 @@
   "name": "m-class-project",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://vassilYanakiev.github.io/MasterClass-assignment",
+  "homepage": "https://vassilYanakiev.github.io/MasterClass-assignment",
   "dependencies": {
+    "apollo-boost": "^0.4.4",
+    "apollo-link": "^1.2.13",
+    "apollo-link-context": "^1.0.19",
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.1.1",
+    "graphql": "^14.5.8",
     "node-sass": "^4.12.0",
     "react": "^16.10.1",
+    "react-apollo": "^3.1.3",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-dom": "^16.10.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "react-sticky-header": "^0.2.0"
+    "react-scripts": "3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy":"gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

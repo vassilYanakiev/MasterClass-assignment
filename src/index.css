@@ -1,13 +1,83 @@
+
+
 body {
-  margin: 0;
+  margin: 0;  
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+@font-face {
+  font-family: 'Galaxy';
+  src: local('Galaxy'), url('./assets/SfDistantGalaxyOutline-xoeO.ttf') format('truetype');
+  
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+a {
+  text-decoration: none;
+  
+}
+
+* {
+  box-sizing: border-box;
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+  float: left;
+  padding: 15px;
+}
+
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+[class*="col-"] {
+  float: left;
+  
+ 
+}
+
+@media only screen and (min-width: 600px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 868px) {
+  /* For desktop: */
+  .col-m1 {width: 8.33%;}
+  .col-m2 {width: 16.66%;}
+  .col-m3 {width: 25%;}
+  .col-m4 {width: 33.33%;}
+  .col-m5 {width: 41.66%;}
+  .col-m6 {width: 50%;}
+  .col-m7 {width: 58.33%;}
+  .col-m8 {width: 66.66%;}
+  .col-m9 {width: 75%;}
+  .col-m10 {width: 83.33%;}
+  .col-m11 {width: 91.66%;}
+  .col-m12 {width: 100%;}
+}
+
