@@ -1,11 +1,11 @@
 import React from 'react';
 
 import MenuItem from '../../components/menu-item/menu-item.component.jsx';
-import DirectoryItem from '../../components/directory-menu/directory-menu.component.jsx';
+import EpiodesItem from '../../components/episodes-menu/episodes.component.jsx';
 
 import './homepage.styles.scss';
 //import { mapContextToProps } from 'react-context-toolbox';
-const HomePage=({theme})=>{
+const HomePage=()=>{
 
     
 //const mytheme=theme.dark;
@@ -14,10 +14,11 @@ const HomePage=({theme})=>{
 return(   
     
     <div className='homepage'>
-        <DirectoryItem myfilter={false}>
+        <EpiodesItem myfilter={false}>
                          
+        </EpiodesItem>
 
-        </DirectoryItem>
+        
     </div>  
     
 )

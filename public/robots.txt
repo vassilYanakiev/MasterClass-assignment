@@ -1,2 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
+import { loader } from 'graphql.macro';
+
+
+export const typeDefs = loader('./local-schema.gql');

@@ -11,64 +11,70 @@ import {gql} from 'apollo-boost';
 import {setContext} from 'apollo-link-context';
 
 import  './assets/SfDistantGalaxyOutline-xoeO.ttf'
-
+import { typeDefs, resolvers } from '../src/client/local.js';
 
 const httpLink=createHttpLink({
-    uri:'http://softuni-swapp-212366186.eu-west-1.elb.amazonaws.com/graphql'
+    uri:'https://swapp.st6.io/graphql'
 
 });
 
 const cache= new InMemoryCache();
 
 
-const authLink = setContext((_, { headers }) => {
-  // get the authentication token from local storage if it exists
-  const token = 'eyJhbGciOiJIUzI123iIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTZmYTFlYTQxYTA4MGY4YjIxMjMwMiIsImVtYWlsIjoiZGVtb0BzdDYuaW8iLCJyb2xlIjoiQURNSU4iL1KHHASDHXQiOjE1NzAxNzYwMjksImV4cCI6MTU3MDE3NzgyOX0.1vYZfspRxVA9wV_FbHL5N0YoVM8ZVQz9y09LfAgjwSc';
-  // return the headers to the context so httpLink can read them
+const authLink1 = setContext((_, { headers }) => {
+  const token = localStorage.getItem('token');
   return {
     headers: {
       ...headers,
-      authorization: `Bearer eyJhbGciOiJIUzI123iIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTZmYTFlYTQxYTA4MGY4YjIxMjMwMiIsImVtYWlsIjoiZGVtb0BzdDYuaW8iLCJyb2xlIjoiQURNSU4iL1KHHASDHXQiOjE1NzAxNzYwMjksImV4cCI6MTU3MDE3NzgyOX0.1vYZfspRxVA9wV_FbHL5N0YoVM8ZVQz9y09LfAgjwSc`,
-    }
-  }
+      authorization: token ? `Bearer ${token}` : ""
+    },
+  };
 });
 
-const client= new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache
+const authLink2 = setContext((_, { headers }) => {
+  const token = localStorage.getItem('token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? token : ""
+    },
+  };
+});
+
+export const client1= new ApolloClient({
+  link: authLink1.concat(httpLink),
+  cache,
+  typeDefs:typeDefs
 
 })
 
-console.log(client.link);
-client
-.query({
-  query: gql`
-    {
+ const client2= new ApolloClient({
+  link: authLink2.concat(httpLink),
+  cache,
+  typeDefs:typeDefs
 
-      allPeople(first:1){
-        edges{      
-          node
-          cursor
-        }
-        pageInfo{
-          hasNextPage
-        }
-        
-      }
-    
+})
 
-  }`
+cache.writeData({
+  data: {
+    authenticated: !!localStorage.getItem('token'),
+  },
+});
 
-}).then(res=>console.log(res));
+
+
 
 
 ReactDOM.render(
-    
-    <ApolloProvider client={client}>
+
+    <ApolloProvider client={client1}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-      </ApolloProvider>  
+    </ApolloProvider> 
+    
     ,
     document.getElementById('root')
   );
+
+  export default {client2}

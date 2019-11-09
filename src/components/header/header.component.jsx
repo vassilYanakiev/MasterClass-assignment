@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import {ThemeContext,LoggedInContext} from '../../App.js';
 import { ReactComponent as LogoutSvg } from '../../assets/logout.svg';
 import { ReactComponent as LogoutSvg2 } from '../../assets/logout2.svg';
-
+import { useApolloClient } from '@apollo/react-hooks';
+import client2 from '../../index.js';
 import './header.styles.light.scss';
 import './header.styles.dark.scss';
-
-export default function Header () {
+import { withRouter } from 'react-router-dom';
+const Header= function () {
 
 
 const context=useContext(LoggedInContext);
+const client2 = useApolloClient();
 return(
 <ThemeContext.Consumer>
     {({ themedark,changeTheme }) => (
@@ -32,7 +34,13 @@ return(
                     Characters
                   </Link>
                 </button >
-                <button className="buttonh3" onClick={()=> context.changeLogin()}>
+                <button className="buttonh3" onClick={()=>(
+                   client2.writeData({ data: { authenticated: false } }),
+                   window.localStorage.setItem("token","")
+                   )
+                 //</div></div> context.changeLogin()
+                  
+                  }>
                 { themedark?
                   (<LogoutSvg />):
                   (<LogoutSvg2/>)
@@ -50,3 +58,6 @@ return(
   </ThemeContext.Consumer>
 )
 }
+
+
+export default withRouter(Header)

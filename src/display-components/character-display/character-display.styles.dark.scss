@@ -1,0 +1,34 @@
+.character-display-single-dark {
+  padding:75px;
+  padding-bottom:65px;
+
+  position:auto;    
+  width: 520px;
+  height: 720px;   
+  background-color:gray; 
+  
+  h1{
+    position: relative;
+    color: rgb(220, 235, 20);
+    font-size:20px;
+    text-align: center;
+    
+  }
+
+  .background-image {
+    
+    padding:25px;
+    position: center;
+    height: 70%;
+    width:90%;     
+    background-repeat: no-repeat;
+    background-size: 400px 400px;      
+   
+  }
+
+  .content {
+   width:90%;    
+   color:white;     
+    
+  }
+}

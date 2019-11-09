@@ -7,7 +7,7 @@ import './login.styles.dark.scss';
 import './login.styles.light.scss';
 import { withRouter, Redirect } from 'react-router-dom';
 
-class Login extends Component {
+class LoginForm extends Component {
   constructor(props) {
     super(props);
 
@@ -30,7 +30,7 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    
+    this.props.login({ variables: { email: this.state.email, password: this.state.password } });
     
     
   }
@@ -68,7 +68,7 @@ class Login extends Component {
                 />
               </FormGroup>
               <Button className='button'
-                onClick={ ()=>
+                /*onClick={ ()=>
                   (this.state.email==='demo@st6.io' && this.state.password==='demo1234')?
             
                    ( this.props.history.push(`/episodes`),
@@ -78,7 +78,8 @@ class Login extends Component {
                     this.setState({wrong:true, email:'',password:''}) 
                                
                 
-                }
+                }*/
+                
                 block         
                 disabled={!this.validateForm()}
                 type="submit"
@@ -104,5 +105,5 @@ class Login extends Component {
   }
 }
 
-const LoginPage = withRouter(Login);
+const LoginPage = withRouter(LoginForm);
 export default LoginPage;

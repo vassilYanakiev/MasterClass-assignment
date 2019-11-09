@@ -3,55 +3,73 @@ import { withRouter } from 'react-router-dom';
 import {ThemeContext} from '../../App.js';
 import './menu-item.styles.light.scss'
 import './menu-item.styles.dark.scss'
+import './menu-item.characters.styles.light.scss'
+import './menu-item.characters.styles.dark.scss'
 
-export const ClickedIdContext = React.createContext(0);
+//export const ClickedIdContext = React.createContext(0);
 class MenuItem extends React.Component{
 
  
-  constructor(){
-      super();
-      
-  }  
+   
   
-  handleButtonClick=(myfilter)=>{
+  handleButtonClick=(from)=>{
     
-    return(
-    !myfilter?
-    this.props.history.push(`${this.props.match.url}/${this.props.linkUrl}`):
-    null       
-    )
+     
+      switch (true) {
+       case from==="charFromEpisode":
+           return(this.props.history.push(`/characters/${this.props.epid}`))
+        case from==="starshipFromCharacters": 
+          return(this.props.history.push(`/starships/${this.props.epid}`))
+        default:        
+          return(this.props.history.push(`${this.props.match.url}/${this.props.epid}`)) 
+      }   
+    
   }  
  
     render(){
       
-      const {title,linkUrl,imageUrl,history,match,id,myfilter,synopsis,...otherProps}={...this.props}; 
-      console.log(myfilter);
+      const {title,openingCrawl,image,history,match,id,parrentsName,from}={...this.props}; 
+      console.log(title);
       return(
         <ThemeContext.Consumer>
         {({ themedark }) => (  
 
        <div className="col-6 col-m4 menu"> 
         <div 
-          className={themedark?'menu-item-dark':'menu-item-light'}
+          className={
+
+            parrentsName=='EpisodesItem'?
+            
+
+                themedark?'menu-item-dark':'menu-item-light'
+              
+            :
+
+                themedark?'menu-item-characters-dark':'menu-item-characters-light'              
+          
+          
+          }
          
-          onClick={() => this.handleButtonClick(myfilter)                     
+          onClick={() => this.handleButtonClick(from)                     
             
           }
-        >
-             
+        >        
+
+          <div
+          className='background-image'
+          style={{  backgroundImage: `url(${image})`  }}
+          />
+
+              <div className='content'>
+
+                <h1 >{ title.toUpperCase()}</h1> 
+               
+                <span className='subtitle'>{openingCrawl}</span> 
+              </div>
 
 
-        <div
-        className='background-image'
-        style={{  backgroundImage: `url(${imageUrl})`  }}
-        />
-
-        <div className='content'>
-          <h1 >{title.toUpperCase()}</h1>
-          <span>{synopsis}</span>
-        </div>
-
-      </div>  </div>  ) }
+        </div> 
+      </div>  ) }
 
      
       </ThemeContext.Consumer>

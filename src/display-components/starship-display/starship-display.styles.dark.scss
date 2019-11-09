@@ -1,0 +1,41 @@
+.starship-display-single-dark {
+    border-radius: 8px 8px 8px 8px;
+    min-width: 50%;  
+    height: 320px;
+   
+    border: 1px solid black;
+    margin: 0 7.5px 15px;
+    background-color:gray;
+    
+    
+  
+    
+  
+    .background-image {
+      position: relative;
+      height: 100%;
+      width:60%;
+      background-size: cover;
+      border-radius: 8px 0px 0px 8px;
+     border-width: thick ;
+    }
+  
+    .content {
+     color:white;
+      h1{
+        position: relative;
+        color: #FFE300;
+        font-size:28px;
+        text-align: center;
+        height:100%;
+      }
+     
+      position: relative;
+      top: -106%;
+      left:32%;    
+      width:40%;
+      
+      
+    }
+  }
+  
