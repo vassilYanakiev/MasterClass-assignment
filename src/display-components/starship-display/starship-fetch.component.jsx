@@ -6,7 +6,7 @@ import gql from 'graphql-tag.macro';
 import MenuItemStarship from './starship-display.component.jsx';
 import StarshipCompare from './starship-compare-fetch.component.jsx'
 import {ThemeContext} from '../../App.js';
-
+import LoaderComponent from '../../components/loader.component.jsx';
 import './starship-display.styles.dark.scss';
 import './starship-display.styles.light.scss';
 import '../../pages/characters-page/characters.page.styles.light.scss';
@@ -38,7 +38,13 @@ const StarshipItemComponent=({myfilter,clickedId})=>{
               
       }
     });
-    if (loading) return null;
+    if (loading) return(
+  
+      <div style={{"display" : "flex",'justifyContent': 'center','margin-top':'300px'}}> 
+          <LoaderComponent />
+      </div> 
+    
+   )
     if (error) return <p>Error on getting starship</p>;
    
 
@@ -52,13 +58,15 @@ const StarshipItemComponent=({myfilter,clickedId})=>{
       {({themedark})=>
 
 
-    (<div >        
+
+    (<div style={{"height":"100%","display":"flex","flex-wrap":"wrap","justify-content":"center"}} >        
             { 
                 <MenuItemStarship  key={data.starship.id} id={data.starship.id} otherProps={data.starship}/>
+                
             }   
-            {
-                <StarshipCompare shipClass={data.starship.starshipClass} otherProps={data.starship}  />
-
+            {<div  style={{"padding-top":"30vh","width":"50vw"}}>
+                <StarshipCompare  shipClass={data.starship.starshipClass} otherProps={data.starship}  />
+             </div>
             }
             
              

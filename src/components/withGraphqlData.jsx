@@ -133,7 +133,7 @@ const dataCharacters=[
               
               }).then(res=>
                 
-                {for(let i=0;i<7;i++){
+                {for(let i=0;i<res.data.allEpisodes.edges.length;i++){
 
                   mysections.push(res.data.allEpisodes.edges[i].node)
                   this.setState({sections:mysections})

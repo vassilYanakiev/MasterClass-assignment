@@ -34,7 +34,7 @@ class MenuItem extends React.Component{
         <ThemeContext.Consumer>
         {({ themedark }) => (  
 
-       <div className="col-6 col-m4 menu"> 
+       <div className={from==='starshipFromCharacters'?"col-8 col-m8 menu":"col-6 col-m4 menu"}> 
         <div 
           className={
 

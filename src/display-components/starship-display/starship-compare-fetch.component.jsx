@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag.macro';
 import {ThemeContext} from '../../App.js';
 import ReactApexChart from 'react-apexcharts';
-
+import LoaderComponent from '../../components/loader.component.jsx';
 
 
 
@@ -46,7 +46,13 @@ const StarshipCompare=({shipClass,otherProps})=>{
         'StarshipFilter':{"starshipClass": shipClass}                   
       }
     });
-    if (loading) return null;
+    if (loading) return(
+  
+      <div style={{"display" : "flex",'justifyContent': 'center','margin-top':'50vh'}}> 
+          <LoaderComponent />
+      </div> 
+    
+   )
     if (error) return <p>Error on getting starship</p>;
    
     const edges=data.allStarships.edges;
@@ -80,10 +86,15 @@ const StarshipCompare=({shipClass,otherProps})=>{
  
 const state = {
   options: {
+    plotOptions: {
+      radar: {
+          size: 140
+      }},
     labels: ['AtmosphericSpeed', 'MLPerHour', 'Crew', 'hyperdriveRating', 'Cost'],
     title: {
       //text: 'Compared to Starship Class Max'
     },
+    
     yaxis: {
         min:0,
         max:100,
@@ -108,7 +119,7 @@ const state = {
      (<div >        
             
             <div id="chart">
-            <ReactApexChart options={state.options} series={state.series} type="radar" height="350" />
+            <ReactApexChart   options={state.options} series={state.series} type="radar" height="350" />
           </div>
 
       </div>)

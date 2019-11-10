@@ -13,19 +13,19 @@ console.log({match});
 switch (true) {
 
     case match.params.id.includes("films"):
-            return(<div> 
+            return(
                 <EpisodeItemComponent myfilter={true} clickedId={match.params.id}/>                 
-            </div>)
+            )
     
     case match.params.id.includes("people"):
-            return(<div> 
+            return( 
                 <CharacterItemComponent myfilter={true} clickedId={match.params.id}/>                     
-            </div>)
+            )
 
     case match.path.includes("starships"):
-            return(<div> 
+            return( 
                 <StarshipItemComponent myfilter={true} clickedId={match.params.id}/>                 
-            </div>)        
+            )        
 
           
         

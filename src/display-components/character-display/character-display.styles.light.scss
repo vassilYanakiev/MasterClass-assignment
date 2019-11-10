@@ -1,11 +1,13 @@
 .character-display-single-light {
-    padding:75px;
-    padding-bottom:65px;
-
+    padding-left:55px;
+    
+   
     position:auto;    
     width: 520px;
-    height: 720px;   
+    height: 680px;   
     background-color:white; 
+    border:solid;
+    border-radius: 10px 10px 10px 10px;
     
     h1{
       position: relative;
@@ -17,9 +19,9 @@
   
     .background-image {
       
-      padding:25px;
+      
       position: center;
-      height: 70%;
+      height: 60%;
       width:90%;     
       background-repeat: no-repeat;
       background-size: 400px 400px;      

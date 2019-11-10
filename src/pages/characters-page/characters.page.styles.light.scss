@@ -1,26 +1,30 @@
 
-  .characters-menu-light {
-    background-color:  #E8EAED;
+  .characters-page-light {
+    background-color:  rgb(243, 237, 237);
     padding: 25px;
     padding-top: 75px;
-    height:100vw;
-    align-self: center;    
-    justify-content: space-between;    
-    
-    
+    width: 100%;
+    height: 100%;
+    position: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  .mybutton-light{
-      
-      align-self: auto;
+
+  
+  .mybutton-dark{
       margin-top:75px;
       margin-bottom:75px;
+      
+      position: static;
       height: 35px;
-      width: 110px;
       border-radius: 8px 8px 8px 8px;
       border: 1px solid gray;
-      color:yellow;
-      background-color: black;
+      color:rgb(121, 195, 218);
+      background-color: #4BD5EE;
       text-align: center;
+      display: block;
+         
       cursor: pointer;
       font-weight:bold;
   

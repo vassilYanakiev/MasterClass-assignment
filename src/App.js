@@ -84,12 +84,12 @@ render() {
             value={{ themedark: this.state.dark, changeTheme: this.handleChangeTheme }}>     
         
      
-      <div style={{"height" : "100%"}} >   
+      
           
               <AppRoute/>
         
        
-      </div> 
+      
       </ThemeContext.Provider> 
     </div>
     

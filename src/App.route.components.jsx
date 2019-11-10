@@ -59,7 +59,7 @@ function AppRoute(){
                 <Header/>
               </div>    
           
-            <Route  exact path='/characters' render={(props) => <CharactersPageComponent {...props} mybutton={<MyButton/>} />}/>  
+            <Route  exact path='/characters' render={(props) => <CharactersPageComponent {...props}  />}/>  
             <Route  exact path='/characters/:id' render={(match ) => <MenuItemClicked {...match}   />}></Route>            
             <Route  exact path='/episodes' render={(props) => <HomePage {...props}   />}/>              
             <Route  exact path='/episodes/:id' render={(match ) => <MenuItemClicked {...match}  />}></Route> 

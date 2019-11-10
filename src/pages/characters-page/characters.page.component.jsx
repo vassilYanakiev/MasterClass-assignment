@@ -76,7 +76,9 @@ const CharactersPageComponent=({myfilter,clickedId})=>{
       {({themedark})=>
 
 
-    (<div className={themedark?'characters-menu-dark':'characters-menu-light'}>
+    ( <div  style={{'width':'100%',"height":edges?(`${edges.length/3*450*650/window.innerWidth+50}px`):"0px"}}>
+    
+        <div className={themedark?'characters-page-dark':'characters-page-light'}>
             { 
               edges    
                 .filter((edge) => (myfilter?edge.node.id ===clickedId:true))
@@ -96,9 +98,10 @@ const CharactersPageComponent=({myfilter,clickedId})=>{
             
             }   
             
-            
 
-      </div>)
+             </div>
+            </div>  
+            )
 
     }
     </ThemeContext.Consumer> 

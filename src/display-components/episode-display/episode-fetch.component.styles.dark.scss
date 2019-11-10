@@ -1,11 +1,12 @@
-.episodes-dark {
-  height:100vw; 
-  background-color:  #E8EAED;
+.episode-fetch-dark {
+  height:auto; 
+  background-color:  rgb(29, 30, 31);
   padding-top: 100px;
-  display:flex;
+  display:block;
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding:25px;
 }
 
 .mybutton-dark{

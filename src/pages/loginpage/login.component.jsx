@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import {LoggedInContext} from '../../App.js';
 import {ThemeContext} from '../../App.js';
-
+import WrongPass from './checkWrongPass.component.jsx';
 import './login.styles.dark.scss';
 import './login.styles.light.scss';
 import { withRouter, Redirect } from 'react-router-dom';
@@ -27,26 +27,38 @@ class LoginForm extends Component {
       [event.target.id]: event.target.value
     });
   }
-
-  handleSubmit = event => {
-    event.preventDefault();
-    this.props.login({ variables: { email: this.state.email, password: this.state.password } });
+  
+  handleLoginFail = (event) => {
     
     
   }
+  handleSubmit = event => {
+    event.preventDefault();
+   
+    
+    this.props.login({ variables: { email: this.state.email, password: this.state.password } })
+    this.setState(()=>({ email:'',password:''})) 
+  }
+
 
   render() {
+
+    
     return (
     <ThemeContext.Consumer> 
       {({themedark})=>
-      
+     <div style={{"padding-top":"100px","height":"100vh"}}>  
       <div className={themedark?'LoginDark':'LoginLight'}>       
         SWAPP
         {<LoggedInContext.Consumer>  
         {({changeLogin})=>
 
           <div >
-            <form className="form" onSubmit={this.handleSubmit} >
+            <form className="form" onSubmit={
+              
+              this.handleSubmit
+              
+              } >
               <FormGroup className='formgroup' controlId="email" >
                 <FormLabel >Email </FormLabel>
                 <br/> 
@@ -68,6 +80,13 @@ class LoginForm extends Component {
                 />
               </FormGroup>
               <Button className='button'
+                  /*onClick={ ()=>
+                    !this.props.loginFailure?
+                    (this.setState({wrong:true, email:'',password:''}) ):
+                    null
+                    //<WrongPass/>
+                    
+                  }
                 /*onClick={ ()=>
                   (this.state.email==='demo@st6.io' && this.state.password==='demo1234')?
             
@@ -89,13 +108,18 @@ class LoginForm extends Component {
             </form>
           
             <div>
-              {this.state.wrong && 
-              <p>  Wrong mail or password! </p>  
+              {this.props.loginFailure?
+              (
+              <p>  Wrong mail or password! </p>
+              
+             
+              ):null
               }        
             </div> 
           </div>
       }
         </LoggedInContext.Consumer> }
+        </div> 
         </div> 
         } 
       </ThemeContext.Consumer> 

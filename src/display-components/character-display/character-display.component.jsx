@@ -2,8 +2,8 @@ import React from 'react';
 
 import {ThemeContext} from '../../App.js';
 
-import './character-display.styles.light.scss'
-import './character-display.styles.dark.scss'
+import './character-display.styles.light.scss';
+import './character-display.styles.dark.scss';
 
 class MenuItemCharacter extends React.Component{ 
    
@@ -30,7 +30,7 @@ class MenuItemCharacter extends React.Component{
         
           <div className='content'>
 
-                  <p className='subtitle'>Height: {height}</p> 
+                  <p>Height: {height}</p> 
                   <p className='subtitle'>Mass: {mass}</p> 
                   <p className='subtitle'>Species: {species.name}</p> 
                   <p className='subtitle'>Home World: {homeworld.name}</p> 
