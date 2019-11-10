@@ -2,7 +2,7 @@ import React from 'react';
 import './episodes.styles.dark.scss'
 import './episodes.styles.light.scss'
 
-import MenuItem from '../menu-item/menu-item.component.jsx';
+import MenuItemForEpisodes from '../menu-item/menu-item.component.jsx';
 import {ThemeContext} from '../../App.js';
 import withGraphql from '../../components/withGraphqlData.jsx'
 class  EpisodesItem extends React.Component{
@@ -29,7 +29,7 @@ render(){
               sections
                 
                 .map(({ id,title, ...otherSectionProps }) => (
-                <MenuItem key={id} epid={id} title={title} parrentsName={this.constructor.name} {...otherSectionProps} />
+                <MenuItemForEpisodes key={id} epid={id} title={title} parrentsName={this.constructor.name} {...otherSectionProps} />
             ))}                          
         
         

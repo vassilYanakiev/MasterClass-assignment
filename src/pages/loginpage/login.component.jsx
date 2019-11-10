@@ -63,6 +63,7 @@ class LoginForm extends Component {
                 <FormLabel >Email </FormLabel>
                 <br/> 
                   <FormControl
+                    style={{"width":"90px"}}
                     autoFocus
                     type="email"
                     value={this.state.email}
@@ -74,6 +75,7 @@ class LoginForm extends Component {
                 <FormLabel>Password</FormLabel>
                 <br/> 
                 <FormControl
+                  style={{"width":"90px"}}
                   value={this.state.password}
                   onChange={this.handleChange}
                   type="password"

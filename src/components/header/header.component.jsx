@@ -16,7 +16,7 @@ const client2 = useApolloClient();
 return(
 <ThemeContext.Consumer>
     {({ themedark,changeTheme }) => (
-      <div className="sticky">
+      <div className="sticky" >
       <div className={themedark?'headerDark':'headerLight'}>
           
           <button className="logo-container" onClick={changeTheme}>
