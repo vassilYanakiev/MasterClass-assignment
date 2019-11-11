@@ -64,7 +64,7 @@ const StarshipItemComponent=({myfilter,clickedId})=>{
 
     (<div style={{"height":"100%","display":"flex","flex-wrap":"wrap","justify-content":"center"}} >        
             { 
-                <MenuItemStarship  key={data.starship.id} id={data.starship.id} otherProps={data.starship}/>
+                <MenuItemStarship  key={data.starship.id} otherProps={data.starship}/>
                 
             }   
             {<div  style={{"padding-top":"30vh","width":"50vw"}}>

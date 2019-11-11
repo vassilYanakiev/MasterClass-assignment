@@ -7,6 +7,7 @@ import {withRouter} from 'react-router-dom';
 import LoginPage  from '../../pages/loginpage/login.component.jsx';
 import client2 from '../../index.js';
 
+
 var loginFailure=false;
 
 

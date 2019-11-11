@@ -4,7 +4,8 @@
   min-width: 25%;
   
   height: auto;
-  align-items: center;
+  min-height:600px;
+  
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
@@ -35,10 +36,14 @@
   }
 
   .content {
-   color:white;
-   font-size: 1vw;
+    text-align:justify;
+    display:flex;
+    flex-flow:column;
+    padding:5px;
+     color:white;
+     font-size: 20;
     h1{
-     
+      align-self: center;
       color: #4BD5EE;
       font-size:18px;
       
