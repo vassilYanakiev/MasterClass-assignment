@@ -16,7 +16,7 @@ constructor(){
 }
 
 render(){
-  const {myfilter,clickedId,sections}={...this.props};
+  const {sections}={...this.props};
   console.log(sections);
   
     return(

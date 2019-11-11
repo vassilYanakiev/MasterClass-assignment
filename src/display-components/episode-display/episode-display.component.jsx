@@ -10,7 +10,7 @@ class MenuItemEpisode extends React.Component{
   
     render(){
       
-      const {id,title,episodeId,openingCrawl,image,director,releaseDate}={...this.props.otherProps}; 
+      const {title,episodeId,openingCrawl,image,director,releaseDate}={...this.props.otherProps}; 
       
       const EPISODE_ROMAN=["I","II","III","IV","V","VI","VII"];
       return(
@@ -29,8 +29,8 @@ class MenuItemEpisode extends React.Component{
                 style={{  backgroundImage: `url(${image})`,"width":"40vw"  }}
               /> 
               <div style={{"display":"flex","flex-direction":"column", "flex-wrap":"wrap"}}>   
-                    <h1 style={{"width":"50vw","align-self":" center"}}>Star Wars: Episode {EPISODE_ROMAN[episodeId-1]}</h1>         
-                    <h2 style={{"width":"50vw","align-self":" center"}}>{(title).toUpperCase()}</h2> 
+                    <h1 style={{"width":"50vw"}}>Star Wars: Episode {EPISODE_ROMAN[episodeId-1]}</h1>         
+                    <h2 style={{"width":"50vw"}}>{(title).toUpperCase()}</h2> 
               </div >        
           </div >   
           <div > 

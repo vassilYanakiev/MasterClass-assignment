@@ -10,8 +10,6 @@ import './menu-item.characters.styles.dark.scss'
 class MenuItemForEpisodes extends React.Component{
 
  
-   
-  
   handleButtonClick=(from)=>{
     
      

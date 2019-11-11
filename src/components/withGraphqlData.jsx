@@ -107,7 +107,7 @@ const dataCharacters=[
         componentDidMount() {
                
           const mysections=[];
-              this.setState(getList=='characters'? {sections:dataCharacters}:{sections:dataEpisodes});
+              this.setState(getList==='characters'? {sections:dataCharacters}:{sections:dataEpisodes});
               
               client1
               .query({

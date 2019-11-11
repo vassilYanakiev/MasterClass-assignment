@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApolloClient, useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
-import Loader from 'react-loader-spinner'
+
 import LoaderComponent from '../../components/loader.component.jsx';
 import {withRouter} from 'react-router-dom';
 import LoginPage  from '../../pages/loginpage/login.component.jsx';

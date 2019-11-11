@@ -7,11 +7,10 @@ import {ApolloProvider } from 'react-apollo';
 import {createHttpLink} from 'apollo-link-http';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 import {ApolloClient} from 'apollo-client';
-import {gql} from 'apollo-boost';
 import {setContext} from 'apollo-link-context';
 
 import  './assets/SfDistantGalaxyOutline-xoeO.ttf'
-import { typeDefs, resolvers } from '../src/client/local.js';
+import { typeDefs } from '../src/client/local.js';
 
 const httpLink=createHttpLink({
     uri:'https://swapp.st6.io/graphql'

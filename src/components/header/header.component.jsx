@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {ThemeContext,LoggedInContext} from '../../App.js';
+import {ThemeContext} from '../../App.js';
 import { ReactComponent as LogoutSvg } from '../../assets/logout.svg';
 import { ReactComponent as LogoutSvg2 } from '../../assets/logout2.svg';
 import { useApolloClient } from '@apollo/react-hooks';
-import client2 from '../../index.js';
+
 import './header.styles.light.scss';
 import './header.styles.dark.scss';
 import { withRouter } from 'react-router-dom';
 const Header= function () {
 
 
-const context=useContext(LoggedInContext);
+//const context=useContext(LoggedInContext);
 const client2 = useApolloClient();
 return(
 <ThemeContext.Consumer>

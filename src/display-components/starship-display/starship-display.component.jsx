@@ -10,7 +10,7 @@ class MenuItemStarship extends React.Component{
   
     render(){
       
-      const {id,name,model,image,starshipClass,cost,maxAtmosphericSpeed,maxMLPerHour,hyperdriveRating,crew}={...this.props.otherProps}; 
+      const {name,model,image,starshipClass,cost,maxAtmosphericSpeed,hyperdriveRating,maxMLPerHour,crew}={...this.props.otherProps}; 
       
       return(
         <ThemeContext.Consumer>
@@ -33,7 +33,10 @@ class MenuItemStarship extends React.Component{
                   <p className='subtitle'>Cost: {cost}</p> 
                   <p className='subtitle'>Crew: {crew}</p> 
                   <p className='subtitle'>Max Atm Speed: {maxAtmosphericSpeed}</p> 
+                  {maxMLPerHour?<p className='subtitle'>Max ML Per Hour: {maxMLPerHour}</p>:null}
                   <p className='subtitle'>Hyper Drive Rating: {hyperdriveRating}</p> 
+
+                  
 
                   
           </div>

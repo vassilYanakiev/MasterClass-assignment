@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import {LoggedInContext} from '../../App.js';
 import {ThemeContext} from '../../App.js';
-import WrongPass from './checkWrongPass.component.jsx';
+
 import './login.styles.dark.scss';
 import './login.styles.light.scss';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class LoginForm extends Component {
   constructor(props) {

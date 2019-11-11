@@ -7,6 +7,8 @@ import './character-fetch.component.styles.light.scss';
 import MenuItemCharacter from './character-display.component.jsx';
 import MenuItem from '../../components/menu-item/menu-item.component.jsx';
 import {ThemeContext} from '../../App.js';
+import ErrorOnGraphqlFetch from '../../components/graphql-data-error.component.jsx'
+
 
 const PERSON_QUERY=gql`
         query Person($id:ID!){
@@ -57,8 +59,10 @@ const CharacterItemComponent=({myfilter,clickedId})=>{
       </div> 
     
    )
-    if (error) return <p>Error on getting all people</p>;
- 
+    //if (error) return <p>Error on getting all people</p>;
+    if (error) return (
+      <ErrorOnGraphqlFetch/>
+    )
   
     
    

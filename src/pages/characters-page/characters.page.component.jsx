@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag.macro';
-import { Link as RouterLink } from 'react-router-dom';
+
 
 import '../../pages/characters-page/characters.page.styles.dark.scss';
 import '../../pages/characters-page/characters.page.styles.light.scss';
@@ -43,7 +43,7 @@ const CharactersPageComponent=({myfilter,clickedId})=>{
     if (loading) return null;
     if (error) return <p>Error on getting all people</p>;
     const {
-      allPeople: { edges, pageInfo, totalCount },
+      allPeople: { edges },
     } = data;
    const hasMore= data.allPeople.pageInfo.hasNextPage;
     

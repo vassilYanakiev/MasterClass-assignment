@@ -6,15 +6,10 @@ import './menu-item.styles.dark.scss'
 import './menu-item.characters.styles.light.scss'
 import './menu-item.characters.styles.dark.scss'
 
-//export const ClickedIdContext = React.createContext(0);
+
 class MenuItem extends React.Component{
 
- 
-   
-  
   handleButtonClick=(from)=>{
-    
-     
       switch (true) {
        case from==="charFromEpisode":
            return(this.props.history.push(`/characters/${this.props.epid}`))
@@ -28,7 +23,7 @@ class MenuItem extends React.Component{
  
     render(){
       
-      const {title,openingCrawl,image,history,match,id,parrentsName,from}={...this.props}; 
+      const {title,openingCrawl,image,parrentsName,from}={...this.props}; 
       console.log(title);
       return(
         <ThemeContext.Consumer>
@@ -38,7 +33,7 @@ class MenuItem extends React.Component{
         <div 
           className={
 
-            parrentsName=='EpisodesItem'?
+            parrentsName==='EpisodesItem'?
             
 
                 themedark?'menu-item-dark':'menu-item-light'

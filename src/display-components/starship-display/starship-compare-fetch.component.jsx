@@ -48,7 +48,7 @@ const StarshipCompare=({shipClass,otherProps})=>{
     });
     if (loading) return(
   
-      <div style={{"display" : "flex",'justifyContent': 'center','margin-top':'50vh'}}> 
+      <div style={{"display" : "flex",'justifyContent': 'center','margin-top':'40vh'}}> 
           <LoaderComponent />
       </div> 
     

@@ -11,6 +11,7 @@ import MenuItemEpisode from './episode-display.component.jsx';
 import MenuItem from '../../components/menu-item/menu-item.component.jsx';
 import LoaderComponent from '../../components/loader.component.jsx';
 import {ThemeContext} from '../../App.js';
+import ErrorOnGraphqlFetch from '../../components/graphql-data-error.component.jsx'
 
 const EPISODE_QUERY=gql`
         query Episode($id:ID!,$first:Int!,$after:String){
@@ -56,12 +57,17 @@ const EpisodeItemComponent=({myfilter,clickedId})=>{
     });
     if (loading) return(
   
-      <div style={{"display" : "flex",'justifyContent': 'center','margin-top':'300px'}}> 
+      <div style={{"display" : "flex",'justify-content': 'center','margin-top':'300px'}}> 
           <LoaderComponent />
       </div> 
     
    )
-    if (error) return <p>Error on getting all people</p>;
+    if (error) return (
+      <ErrorOnGraphqlFetch/>
+    )
+    //<p>Error on getting all people</p>;
+    
+    
     const {
       episode: { people, pageInfo, totalCount },
     } = data;
@@ -110,7 +116,8 @@ const EpisodeItemComponent=({myfilter,clickedId})=>{
             { 
                 <MenuItemEpisode  key={data.episode.id}  otherProps={data.episode}/>
             }   
-            <div style={{'width':'100%',"height":edges?(`${edges.length/3*450*650/window.innerWidth+50}px`):"0px"}}>
+            <div style={{'width':'100%',"height":edges?(`${edges.length/3*450*650/window.innerWidth+50}px`):"0px",
+          "background-color":themedark?"black":"white"}}>
                 {edges                              
                       .map((edge) => (
                      
@@ -118,7 +125,7 @@ const EpisodeItemComponent=({myfilter,clickedId})=>{
                       ))   
                 }
              </div>
-             <div style={{"display" : "flex",'justifyContent': 'center'}}> 
+             <div style={{"display" : "flex",'justifyContent': 'center',"background-color":themedark?"black":"white"}}> 
                   {hasMore &&
                     (
                       <button className={themedark?'mybutton-dark':'mybutton-light'} onClick={load5MoreCharacters}>Load More</button>

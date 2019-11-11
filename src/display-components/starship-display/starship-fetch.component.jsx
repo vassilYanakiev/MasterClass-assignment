@@ -7,6 +7,7 @@ import MenuItemStarship from './starship-display.component.jsx';
 import StarshipCompare from './starship-compare-fetch.component.jsx'
 import {ThemeContext} from '../../App.js';
 import LoaderComponent from '../../components/loader.component.jsx';
+import ErrorOnGraphqlFetch from '../../components/graphql-data-error.component.jsx'
 import './starship-display.styles.dark.scss';
 import './starship-display.styles.light.scss';
 import '../../pages/characters-page/characters.page.styles.light.scss';
@@ -45,10 +46,12 @@ const StarshipItemComponent=({myfilter,clickedId})=>{
       </div> 
     
    )
-    if (error) return <p>Error on getting starship</p>;
-   
+   //if (error) return <p>Error on getting starship</p>;
+   if (error) return (
+    <ErrorOnGraphqlFetch/>
+  )
 
-    console.log(data.starship);
+    
     
    
     
