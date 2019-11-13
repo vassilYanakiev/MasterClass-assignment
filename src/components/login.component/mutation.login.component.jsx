@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import LoaderComponent from '../../components/loader.component.jsx';
 import {withRouter} from 'react-router-dom';
 import LoginPage  from '../../pages/loginpage/login.component.jsx';
-import client2 from '../../index.js';
+import client2 from '../../client/client.js';
 
 
 var loginFailure=false;

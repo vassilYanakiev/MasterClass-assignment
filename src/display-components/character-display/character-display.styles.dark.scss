@@ -4,11 +4,13 @@
   position:auto;    
   width: 520px;
   height: 680px;   
-  background-color:gray; 
-  border:solid;
+  background-color:rgb(85, 79, 79); 
+  border:solid white;
+  
   border-radius: 10px 10px 10px 10px;
   
   h1{
+    font-family: 'STARWARS';
     position: relative;
     color: rgb(220, 235, 20);
     font-size:20px;

@@ -12,6 +12,7 @@ import MenuItem from '../../components/menu-item/menu-item.component.jsx';
 import LoaderComponent from '../../components/loader.component.jsx';
 import {ThemeContext} from '../../App.js';
 import ErrorOnGraphqlFetch from '../../components/graphql-data-error.component.jsx'
+import EmptyOnGraphqlFetch from '../../components/graphql-data-empty.component.jsx'
 
 const EPISODE_QUERY=gql`
         query Episode($id:ID!,$first:Int!,$after:String){
@@ -109,14 +110,14 @@ const EpisodeItemComponent=({myfilter,clickedId})=>{
       <ThemeContext.Consumer> 
       {({themedark})=>
 
-
+    (data.episode)!==null?
     (
       <div >
       <div className={themedark?".episode-fetch-dark":".episode-fetch-light"} >        
             { 
                 <MenuItemEpisode  key={data.episode.id}  otherProps={data.episode}/>
             }   
-            <div style={{'width':'100%',"height":edges?(`${edges.length/3*450*650/window.innerWidth+50}px`):"0px",
+            <div style={{'width':'100%',"height":edges?(`${edges.length/3*450*680/window.innerWidth+150}px`):"0px",
           "background-color":themedark?"black":"white"}}>
                 {edges                              
                       .map((edge) => (
@@ -140,6 +141,9 @@ const EpisodeItemComponent=({myfilter,clickedId})=>{
 
       </div>
       </div>)
+      :
+      
+      <EmptyOnGraphqlFetch/>
 
     }
     </ThemeContext.Consumer> 

@@ -17,6 +17,11 @@ body {
   src: local('Galaxy'), url('./assets/SfDistantGalaxyOutline-xoeO.ttf') format('truetype');
   
 }
+@font-face {
+  font-family: 'STARWARS';
+  src: local('STARWARS'), url('./assets/STARWARS.ttf') format('truetype');
+  
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

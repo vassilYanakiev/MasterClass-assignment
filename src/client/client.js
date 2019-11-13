@@ -1,4 +1,12 @@
-import { typeDefs } from '../src/client/local.js';
+
+import {createHttpLink} from 'apollo-link-http';
+import {InMemoryCache} from 'apollo-cache-inmemory';
+import {ApolloClient} from 'apollo-client';
+import {setContext} from 'apollo-link-context';
+
+
+
+import { typeDefs } from './local.js';
 
 const httpLink=createHttpLink({
     uri:'https://swapp.st6.io/graphql'
@@ -48,4 +56,4 @@ cache.writeData({
   },
 });
 
-export default client2;
+export default client1;

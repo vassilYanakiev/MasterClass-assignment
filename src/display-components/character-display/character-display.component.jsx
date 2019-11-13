@@ -11,7 +11,7 @@ class MenuItemCharacter extends React.Component{
     render(){
       
       const {height,mass,image,name,species,homeworld}={...this.props.otherProps}; 
-      
+      console.log(height,mass,image,name,species,homeworld);
       return(
         <ThemeContext.Consumer>
         {({ themedark }) => (  
@@ -30,10 +30,10 @@ class MenuItemCharacter extends React.Component{
         
           <div className='content'>
 
-                  <p>Height: {height}</p> 
-                  <p className='subtitle'>Mass: {mass}</p> 
-                  <p className='subtitle'>Species: {species.name}</p> 
-                  <p className='subtitle'>Home World: {homeworld.name}</p> 
+                  {height?<p>Height: {height}</p> : <p>Height: NA</p>}
+                  {mass? <p className='subtitle'>Mass: {mass}</p> :<p className='subtitle'>Mass: NA</p>} 
+                  {species? <p className='subtitle'>Species: {species.name}</p> : <p className='subtitle'>Species: NA</p>} 
+                  {homeworld? <p className='subtitle'>Home World: {homeworld.name}</p> : <p className='subtitle'>Home World: NA</p>}
           </div>
         </div> 
         ) }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {gql} from 'apollo-boost';
-import {client1} from '../../src/index.js';
+import client1 from '../client/client.js';
 
     
 const dataCharacters=[

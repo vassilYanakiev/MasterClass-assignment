@@ -8,7 +8,7 @@ import MenuItemCharacter from './character-display.component.jsx';
 import MenuItem from '../../components/menu-item/menu-item.component.jsx';
 import {ThemeContext} from '../../App.js';
 import ErrorOnGraphqlFetch from '../../components/graphql-data-error.component.jsx'
-
+import EmptyOnGraphqlFetch from '../../components/graphql-data-empty.component.jsx'
 
 const PERSON_QUERY=gql`
         query Person($id:ID!){
@@ -72,7 +72,7 @@ const CharacterItemComponent=({myfilter,clickedId})=>{
       <ThemeContext.Consumer> 
       {({themedark})=>
 
-
+    (data.person)!==null?
     ( <div className={           
             themedark?'characters-dark':'characters-light'                  
         } >   
@@ -92,7 +92,10 @@ const CharacterItemComponent=({myfilter,clickedId})=>{
                 </div> 
             </div> 
 
-      )
+      ):
+      
+        <EmptyOnGraphqlFetch/>
+      
 
     }
     </ThemeContext.Consumer> 

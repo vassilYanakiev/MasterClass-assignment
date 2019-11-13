@@ -9,6 +9,7 @@ import MenuItemClicked from './components/menu-item-clicked/menu-item-clicked.co
 import Login from './components/login.component/mutation.login.component.jsx';
 import CharactersPageComponent from './pages/characters-page/characters.page.component.jsx';
 import {AUTHENTICATED_QUERY} from './pages/private-page-wrapper/private-page-wrapper.jsx';
+import EmptyOnGraphqlFetch from './components/graphql-data-empty.component.jsx'
 import './App-dark.scss';
 import './App-light.scss';
 
@@ -50,14 +51,14 @@ function AppRoute(){
               <div>  
                 <Header/>
               </div>    
-          
-            <Route  exact path='/characters' render={(props) => <CharactersPageComponent {...props}  />}/>  
-            <Route  exact path='/characters/:id' render={(match ) => <MenuItemClicked {...match}   />}></Route>            
-            <Route  exact path='/episodes' render={(props) => <HomePage {...props}   />}/>              
-            <Route  exact path='/episodes/:id' render={(match ) => <MenuItemClicked {...match}  />}></Route> 
-            <Route  exact path='/starships/starships:id' render={(match ) => <MenuItemClicked {...match}   />}></Route> 
-           
-           
+              <Switch>
+                  <Route  exact path='/characters' render={(props) => <CharactersPageComponent {...props}  />}/>  
+                  <Route  exact path='/characters/:id' render={(match ) => <MenuItemClicked {...match}   />}></Route>            
+                  <Route  exact path='/episodes' render={(props) => <HomePage {...props}   />}/>              
+                  <Route  exact path='/episodes/:id' render={(match ) => <MenuItemClicked {...match}  />}></Route> 
+                  <Route  exact path='/starships/starships:id' render={(match ) => <MenuItemClicked {...match}   />}></Route> 
+                  <Route path="/"> <EmptyOnGraphqlFetch/> </Route>
+              </Switch>
             
           </PrivateRoute>}
           

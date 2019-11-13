@@ -4,7 +4,7 @@ import {ThemeContext} from '../../App.js';
 import { ReactComponent as LogoutSvg } from '../../assets/logout.svg';
 import { ReactComponent as LogoutSvg2 } from '../../assets/logout2.svg';
 import { useApolloClient } from '@apollo/react-hooks';
-
+import client2 from '../../client/client.js';
 import './header.styles.light.scss';
 import './header.styles.dark.scss';
 import { withRouter } from 'react-router-dom';

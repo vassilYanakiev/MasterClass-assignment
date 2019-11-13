@@ -7,8 +7,12 @@ import '../../pages/characters-page/characters.page.styles.dark.scss';
 import '../../pages/characters-page/characters.page.styles.light.scss';
 import MenuItem from '../../components/menu-item/menu-item.component.jsx';
 import {ThemeContext} from '../../App.js';
+import LoaderComponent from '../../components/loader.component.jsx';
+import ErrorOnGraphqlFetch from '../../components/graphql-data-error.component.jsx'
+import client1 from '../../client/client.js'
+import ALL_CHAR_QUERY from '../../client/queries-gql.js'
 
-const ALL_CHAR_QUERY=gql`
+/*export const ALL_CHAR_QUERY=gql`
 query AllPeopleQuery($first:Int!,$after:String)  { 
   allPeople(first:$first,after:$after){
     edges{
@@ -26,7 +30,7 @@ query AllPeopleQuery($first:Int!,$after:String)  {
      
   }
   
-}`;
+}`;*/
 
 
 const CharactersPageComponent=({myfilter,clickedId})=>{
@@ -34,14 +38,23 @@ const CharactersPageComponent=({myfilter,clickedId})=>{
     const { data, loading, error, fetchMore } = useQuery(ALL_CHAR_QUERY,
       
     {
+      
       variables: {
         first: 12,
         after:"",
        
       }
     });
-    if (loading) return null;
-    if (error) return <p>Error on getting all people</p>;
+    if (loading) return(
+  
+      <div style={{"display" : "flex",'justifyContent': 'center','margin-top':'40vh'}}> 
+          <LoaderComponent />
+      </div> 
+    
+   );
+    if (error) return (
+      <ErrorOnGraphqlFetch/>
+    )
     const {
       allPeople: { edges },
     } = data;
@@ -69,7 +82,7 @@ const CharactersPageComponent=({myfilter,clickedId})=>{
       })
       
     }
-    console.log(clickedId)
+    
     return(
 
       <ThemeContext.Consumer> 

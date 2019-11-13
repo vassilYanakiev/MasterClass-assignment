@@ -8,6 +8,7 @@ import StarshipCompare from './starship-compare-fetch.component.jsx'
 import {ThemeContext} from '../../App.js';
 import LoaderComponent from '../../components/loader.component.jsx';
 import ErrorOnGraphqlFetch from '../../components/graphql-data-error.component.jsx'
+import EmptyOnGraphqlFetch from '../../components/graphql-data-empty.component.jsx'
 import './starship-display.styles.dark.scss';
 import './starship-display.styles.light.scss';
 import '../../pages/characters-page/characters.page.styles.light.scss';
@@ -61,7 +62,7 @@ const StarshipItemComponent=({myfilter,clickedId})=>{
       {({themedark})=>
 
 
-
+(data.starship)!==null?
     (<div style={{"height":"100%","display":"flex","flex-wrap":"wrap","justify-content":"center"}} >        
             { 
                 <MenuItemStarship  key={data.starship.id} otherProps={data.starship}/>
@@ -74,7 +75,9 @@ const StarshipItemComponent=({myfilter,clickedId})=>{
             
              
 
-      </div>)
+      </div>):
+      
+      <EmptyOnGraphqlFetch/>
 
     }
     </ThemeContext.Consumer> 

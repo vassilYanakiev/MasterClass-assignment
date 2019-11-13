@@ -29,12 +29,12 @@ class MenuItemStarship extends React.Component{
           <h1>Model: {model}</h1>
         
           <div className='content'>
-                  <p className='subtitle'>Class: {starshipClass}</p>                              
-                  <p className='subtitle'>Cost: {cost}</p> 
-                  <p className='subtitle'>Crew: {crew}</p> 
-                  <p className='subtitle'>Max Atm Speed: {maxAtmosphericSpeed}</p> 
+                  {starshipClass?<p className='subtitle'>Class: {starshipClass}</p>:<p className='subtitle'>Class: na</p>}                              
+                  {cost==null?<p className='subtitle'>Cost: {cost}</p>:<p className='subtitle'>Cost:{cost}</p>}
+                  {crew?<p className='subtitle'>Crew: {crew}</p>:null} 
+                  {maxAtmosphericSpeed?<p className='subtitle'>Max Atm Speed: {maxAtmosphericSpeed}</p>:null} 
                   {maxMLPerHour?<p className='subtitle'>Max ML Per Hour: {maxMLPerHour}</p>:null}
-                  <p className='subtitle'>Hyper Drive Rating: {hyperdriveRating}</p> 
+                  {hyperdriveRating?<p className='subtitle'>Hyper Drive Rating: {hyperdriveRating}</p>:null} 
 
                   
 
