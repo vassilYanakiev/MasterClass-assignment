@@ -89,7 +89,7 @@ const CharactersPageComponent=({myfilter,clickedId})=>{
       {({themedark})=>
 
 
-    ( <div  style={{'width':'100%',"height":edges?(`${edges.length/3*450*650/window.innerWidth+50}px`):"0px"}}>
+    ( <div  style={{'width':'100%',"height":edges?(`${edges.length/3*450*650/window.innerWidth+120}px`):"0px"}}>
     
         <div className={themedark?'characters-page-dark':'characters-page-light'}>
             { 
@@ -106,7 +106,7 @@ const CharactersPageComponent=({myfilter,clickedId})=>{
             {
               !myfilter && hasMore &&
               (
-                <button className={themedark?'mybutton-dark':'mybutton-light'} onClick={loadMoreChars}>Load More</button>
+                <button id='buttonLoadCharacters' className={themedark?'mybutton-dark':'mybutton-light'} onClick={loadMoreChars}>Load More</button>
               )
             
             }   

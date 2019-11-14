@@ -29,12 +29,12 @@ class MenuItemStarship extends React.Component{
           <h1>Model: {model}</h1>
         
           <div className='content'>
-                  {starshipClass?<p className='subtitle'>Class: {starshipClass}</p>:<p className='subtitle'>Class: na</p>}                              
-                  {cost==null?<p className='subtitle'>Cost: {cost}</p>:<p className='subtitle'>Cost:{cost}</p>}
-                  {crew?<p className='subtitle'>Crew: {crew}</p>:null} 
-                  {maxAtmosphericSpeed?<p className='subtitle'>Max Atm Speed: {maxAtmosphericSpeed}</p>:null} 
-                  {maxMLPerHour?<p className='subtitle'>Max ML Per Hour: {maxMLPerHour}</p>:null}
-                  {hyperdriveRating?<p className='subtitle'>Hyper Drive Rating: {hyperdriveRating}</p>:null} 
+                  {starshipClass?<p className='subtitle'><span className='span-title'>Class: </span> <span className='span-text'> {starshipClass}</span> </p>:<p className='subtitle'><span className='span-title'>Class: NA</span></p>}                              
+                  {cost?<p className='subtitle'><span className='span-title'>Cost: </span> <span className='span-text'> {cost}</span> </p>:<p className='subtitle'><span className='span-title'>Cost: 0 </span></p>}
+                  {crew?<p className='subtitle'><span className='span-title'>Crew: </span> <span className='span-text'> {crew}</span> </p>:null} 
+                  {maxAtmosphericSpeed?<p className='subtitle'><span className='span-title'>Max Atm speed: </span> <span className='span-text'> {maxAtmosphericSpeed}</span> </p>:null} 
+                  {maxMLPerHour?<p className='subtitle'><span className='span-title'>Max ML Per Hour: </span> <span className='span-text'> {maxMLPerHour}</span>  </p>:null}
+                  {hyperdriveRating?<p className='subtitle'><span className='span-title'>Hyper Drive Rating: </span>  <span className='span-text'> {hyperdriveRating}</span>  </p>:null} 
 
                   
 

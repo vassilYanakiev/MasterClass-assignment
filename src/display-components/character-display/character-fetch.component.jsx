@@ -81,8 +81,10 @@ const CharacterItemComponent=({myfilter,clickedId})=>{
                       <MenuItemCharacter  key={data.person.id} otherProps={data.person}/>
                   
               </div>
-              <div style={{"width":"50%","height":"100%","display":"flex","flex-direction":"column", "flex-wrap":"wrap"}}>
-                  {         
+              <div style={{"width":"50%","height":"100%","display":"flex","flex-direction":"column", "flex-wrap":"wrap","background-color":themedark?"black":"gray"}}>
+                 
+              <div className="p-title"> Piloted Starhips</div> 
+                  {                          
                     data.person.starships.edges                                
                         .map((edge) => (
                         <MenuItem style={{"min-width":"550px"}} key={edge.node.id} title={edge.node.name} from={"starshipFromCharacters"} epid={edge.node.id} image={edge.node.image} parrentsName={"CharactersItem"} />

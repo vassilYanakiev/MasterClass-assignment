@@ -6,9 +6,11 @@
     display:flex;
     flex-wrap:wrap;
     height: 100%;   
-    background-color:white; 
+    background-color:gray; 
+    
     
     h1{
+      margin-top:150px;
       font-family: 'STARWARS';
       height:30px;
       align-self:top;
@@ -34,7 +36,7 @@
       
       
       height: 60vh;
-      width: 320px;   
+      width: 380px;   
       background-repeat: no-repeat;
       background-size: cover;
          
@@ -42,10 +44,21 @@
     }
   
     .content {
-     
+      margin-top:25px;
+      padding:10px; 
+      background-color: white;
+      font-weight:bold;
       
         
      color:black;     
+      
+     .span-title{
+      color: black;
+     }
+  
+     .span-text{
+      color:rgb(94, 204, 238);
+     }
       
     }
   }

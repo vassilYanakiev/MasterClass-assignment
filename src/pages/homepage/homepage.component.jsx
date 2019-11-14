@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MenuItem from '../../components/menu-item/menu-item.component.jsx';
-import EpiodesItem from '../../components/episodes-menu/episodes.component.jsx';
+import EpiodesItem from '../episodes-page/episodes.component.jsx';
 
 import './homepage.styles.scss';
 

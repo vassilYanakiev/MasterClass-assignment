@@ -30,10 +30,10 @@ class MenuItemCharacter extends React.Component{
         
           <div className='content'>
 
-                  {height?<p>Height: {height}</p> : <p>Height: NA</p>}
-                  {mass? <p className='subtitle'>Mass: {mass}</p> :<p className='subtitle'>Mass: NA</p>} 
-                  {species? <p className='subtitle'>Species: {species.name}</p> : <p className='subtitle'>Species: NA</p>} 
-                  {homeworld? <p className='subtitle'>Home World: {homeworld.name}</p> : <p className='subtitle'>Home World: NA</p>}
+                  {height?<p><span className='span-title'>Height: </span> <span className='span-text'>{height}</span></p> : <p><span className='span-title'>Height: </span>: NA</p>}
+                  {mass? <p className='subtitle'><span className='span-title'>Mass: </span> <span className='span-text'>{mass}</span></p> :<p className='subtitle'><span className='span-title'>Mass: NA </span></p>} 
+                  {species? <p className='subtitle'><span className='span-title'>Species: </span> <span className='span-text'>{species.name}</span></p> : <p className='subtitle'><span className='span-title'>Species: NA </span></p>} 
+                  {homeworld? <p className='subtitle'><span className='span-title'>Home World: </span> <span className='span-text'>{homeworld.name}</span></p> : <p className='subtitle'><span className='span-title'>Home World:NA </span></p>}
           </div>
         </div> 
         ) }

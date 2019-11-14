@@ -117,8 +117,8 @@ const EpisodeItemComponent=({myfilter,clickedId})=>{
             { 
                 <MenuItemEpisode  key={data.episode.id}  otherProps={data.episode}/>
             }   
-            <div style={{'width':'100%',"height":edges?(`${edges.length/3*450*680/window.innerWidth+150}px`):"0px",
-          "background-color":themedark?"black":"white"}}>
+            <div style={{'padding':'20px','width':'100%',"height":edges?(`${edges.length/3*450*680/window.innerWidth+150}px`):"0px",
+          "background-color":themedark?"black":"gray"}}>
                 {edges                              
                       .map((edge) => (
                      
@@ -126,7 +126,7 @@ const EpisodeItemComponent=({myfilter,clickedId})=>{
                       ))   
                 }
              </div>
-             <div style={{"display" : "flex",'justifyContent': 'center',"background-color":themedark?"black":"white"}}> 
+             <div style={{"display" : "flex",'justifyContent': 'center',"background-color":themedark?"black":"gray"}}> 
                   {hasMore &&
                     (
                       <button className={themedark?'mybutton-dark':'mybutton-light'} onClick={load5MoreCharacters}>Load More</button>

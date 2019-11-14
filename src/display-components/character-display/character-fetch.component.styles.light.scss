@@ -1,15 +1,22 @@
 .characters-light {
-    padding-top:75px;
+    
     padding:25px;
     height:120%; 
-    background-color:  #E8EAED;
+    background-color:  gray;
     padding-top: 75px;
     display:flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
   
+  .p-title{
+    padding-top:45px;
+    margin-left:12vw;
+    font-size: 15;
+    font-family: 'STARWARS';
+    font-style: oblique;
+    color:rgb(95, 87, 87);
+  }
   
   .mybutton-light{
         
@@ -28,3 +35,5 @@
   
   
   }
+
+}

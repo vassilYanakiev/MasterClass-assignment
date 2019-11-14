@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from 'react-test-renderer';
 import { MockedProvider } from "@apollo/react-testing";
-import Enzyme, { mount } from "enzyme";
+import Enzyme, { mount,shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import CharactersPageComponent from './characters.page.component.jsx'
 import ALL_CHAR_QUERY from '../../client/queries-gql.js'
@@ -30,10 +30,6 @@ const mocks = [
   ];
   
 
-
-
-
-
   it('renders without error', () => {
     renderer.create(
       <MockedProvider mocks={mocks} addTypename={false}>
@@ -41,17 +37,17 @@ const mocks = [
       </MockedProvider>,
     );
   });
-  const wait = require('waait');
-  it('should render loading state initially', async () => {
-    
-    const component = renderer.create(
-      <MockedProvider mocks={[]}>
-        <CharactersPageComponent />
-      </MockedProvider>,
-    );
-  
-    await wait(0); // wait for response
 
-    const h1 = component.root.findByType('h1');
-    expect(h1.children).toContain('OBI-WAN');
-  });
+it('load button not rendered on empty fetch',()=>{
+
+    const wrapper=shallow(
+      
+        <CharactersPageComponent mocks={mocks} first={1} after='' />
+      
+    );  
+    wrapper.find('[id="buttonLoadCharacters"]').simulate('click');
+});
+
+  
+
+

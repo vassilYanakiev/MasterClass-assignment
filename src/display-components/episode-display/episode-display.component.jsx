@@ -23,7 +23,7 @@ class MenuItemEpisode extends React.Component{
             } >        
             
             
-          <div style={{"display":"flex","height":"100%", "flex-wrap":"wrap"}}> 
+          <div style={{"border-style": "outset", "display":"flex","height":"100%","width":"100%", "flex-wrap":"wrap","background-color":themedark?"gray":"white"}}> 
               <div
                 className='background-image'
                 style={{  backgroundImage: `url(${image})`,"width":"40vw"  }}
@@ -38,8 +38,8 @@ class MenuItemEpisode extends React.Component{
 
                  
                     <p className='subtitle'> {openingCrawl}</p> 
-                    <p className='subtitle'>Director: {director}</p> 
-                    <p className='subtitle'>Release date: {releaseDate}</p> 
+                    <p className='subtitle'> <span className='span-title'>Director: </span> <span className='span-text'>{director}</span></p> 
+                    <p className='subtitle'><span className='span-title'>Release date: </span> <span className='span-text'>{releaseDate}</span> </p> 
             </div>
           </div>  
         </div> 

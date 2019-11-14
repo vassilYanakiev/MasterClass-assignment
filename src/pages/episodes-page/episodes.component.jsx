@@ -2,7 +2,7 @@ import React from 'react';
 import './episodes.styles.dark.scss'
 import './episodes.styles.light.scss'
 
-import MenuItemForEpisodes from '../menu-item/menu-item.componentForEpisodes.jsx';
+import MenuItemForEpisodes from '../../components/menu-item/menu-item.componentForEpisodes.jsx';
 import {ThemeContext} from '../../App.js';
 import withGraphql from '../../components/withGraphqlData.jsx'
 class  EpisodesItem extends React.Component{
