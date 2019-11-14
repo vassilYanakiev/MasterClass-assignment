@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/MasterClass-assignment/static/css/main.862be62a.chunk.css",
+    "main.js": "/MasterClass-assignment/static/js/main.86e3e1e6.chunk.js",
+    "main.js.map": "/MasterClass-assignment/static/js/main.86e3e1e6.chunk.js.map",
+    "runtime-main.js": "/MasterClass-assignment/static/js/runtime-main.26bbad46.js",
+    "runtime-main.js.map": "/MasterClass-assignment/static/js/runtime-main.26bbad46.js.map",
+    "static/js/2.0d660175.chunk.js": "/MasterClass-assignment/static/js/2.0d660175.chunk.js",
+    "static/js/2.0d660175.chunk.js.map": "/MasterClass-assignment/static/js/2.0d660175.chunk.js.map",
+    "index.html": "/MasterClass-assignment/index.html",
+    "precache-manifest.27da7d7024cebc5b41b172b749446110.js": "/MasterClass-assignment/precache-manifest.27da7d7024cebc5b41b172b749446110.js",
+    "service-worker.js": "/MasterClass-assignment/service-worker.js",
+    "static/css/main.862be62a.chunk.css.map": "/MasterClass-assignment/static/css/main.862be62a.chunk.css.map",
+    "static/media/index.css": "/MasterClass-assignment/static/media/STARWARS.3f085be9.ttf",
+    "static/media/SfDistantGalaxyOutline-xoeO.ttf": "/MasterClass-assignment/static/media/SfDistantGalaxyOutline-xoeO.9652b3f0.ttf",
+    "static/media/logout.c4a635f6.svg": "/MasterClass-assignment/static/media/logout.c4a635f6.svg",
+    "static/media/logout2.9b14fc52.svg": "/MasterClass-assignment/static/media/logout2.9b14fc52.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.26bbad46.js",
+    "static/js/2.0d660175.chunk.js",
+    "static/css/main.862be62a.chunk.css",
+    "static/js/main.86e3e1e6.chunk.js"
+  ]
+}
