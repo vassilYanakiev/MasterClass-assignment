@@ -89,7 +89,7 @@ const CharactersPageComponent=({myfilter,clickedId})=>{
       {({themedark})=>
 
 
-    ( <div  style={{'width':'100%',"height":edges?(`${edges.length/3*450*650/window.innerWidth+120}px`):"0px"}}>
+    ( <div  style={{'width':'100%',"height":edges?(`${edges.length/3*450*650/window.innerWidth}px`):"0px"}}>
     
         <div className={themedark?'characters-page-dark':'characters-page-light'}>
             { 

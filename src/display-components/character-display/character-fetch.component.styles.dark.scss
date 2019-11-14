@@ -1,7 +1,7 @@
 .characters-dark {
    
     padding:25px;
-    height:120%; 
+    height:100vh; 
     background-color:  black;
     padding-top: 75px;
     display:flex;
@@ -10,7 +10,7 @@
     justify-content: space-between;
 
     .p-title{
-      padding-top:45px;
+      padding-top:25px;
       margin-left:12vw;
       font-size: 15;
       font-family: 'STARWARS';

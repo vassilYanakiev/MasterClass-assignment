@@ -17,7 +17,7 @@ constructor(){
 
 render(){
   const {sections}={...this.props};
-  console.log(sections);
+ 
   
     return(
       <ThemeContext.Consumer> 
@@ -28,8 +28,8 @@ render(){
             { 
               sections
                 
-                .map(({ id,title, ...otherSectionProps }) => (
-                <MenuItemForEpisodes key={id} epid={id} title={title} parrentsName={this.constructor.name} {...otherSectionProps} />
+                .map(({ id,title,openingCrawl, ...otherSectionProps }) => (
+                <MenuItemForEpisodes key={id} epid={id} title={title} openingCrawl={openingCrawl} parrentsName={this.constructor.name} {...otherSectionProps} />
             ))}                          
         
         

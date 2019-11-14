@@ -27,7 +27,8 @@ class MenuItemForEpisodes extends React.Component{
     render(){
       
       const {title,openingCrawl,image,history,match,id,parrentsName,from}={...this.props}; 
-      console.log(title);
+
+  
       return(
         <ThemeContext.Consumer>
         {({ themedark }) => (  

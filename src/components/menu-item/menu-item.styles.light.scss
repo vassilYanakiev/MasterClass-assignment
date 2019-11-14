@@ -40,8 +40,8 @@
     display:flex;
     flex-flow:column;
     padding:5px;
-     color:white;
-     font-size: 20;
+     
+     font-size: 15px;
     h1{
       font-family: 'STARWARS';
       align-self: center;
@@ -50,6 +50,7 @@
       
     }
     position: relative;
+    min-height: 50px;
     width: 100%;
     height: 40%;
     background-size: cover;
