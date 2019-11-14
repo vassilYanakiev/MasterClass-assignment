@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/MasterClass-assignment/static/css/main.8ece0a2b.chunk.css",
-    "main.js": "/MasterClass-assignment/static/js/main.5a032bdc.chunk.js",
-    "main.js.map": "/MasterClass-assignment/static/js/main.5a032bdc.chunk.js.map",
+    "main.css": "/MasterClass-assignment/static/css/main.bb402240.chunk.css",
+    "main.js": "/MasterClass-assignment/static/js/main.17aa9a5a.chunk.js",
+    "main.js.map": "/MasterClass-assignment/static/js/main.17aa9a5a.chunk.js.map",
     "runtime-main.js": "/MasterClass-assignment/static/js/runtime-main.26bbad46.js",
     "runtime-main.js.map": "/MasterClass-assignment/static/js/runtime-main.26bbad46.js.map",
     "static/js/2.0d660175.chunk.js": "/MasterClass-assignment/static/js/2.0d660175.chunk.js",
     "static/js/2.0d660175.chunk.js.map": "/MasterClass-assignment/static/js/2.0d660175.chunk.js.map",
     "index.html": "/MasterClass-assignment/index.html",
-    "precache-manifest.22c129ac3ee9245fe5641c6722552adb.js": "/MasterClass-assignment/precache-manifest.22c129ac3ee9245fe5641c6722552adb.js",
+    "precache-manifest.fca67227bd996011ec5445659432a02f.js": "/MasterClass-assignment/precache-manifest.fca67227bd996011ec5445659432a02f.js",
     "service-worker.js": "/MasterClass-assignment/service-worker.js",
-    "static/css/main.8ece0a2b.chunk.css.map": "/MasterClass-assignment/static/css/main.8ece0a2b.chunk.css.map",
+    "static/css/main.bb402240.chunk.css.map": "/MasterClass-assignment/static/css/main.bb402240.chunk.css.map",
     "static/media/index.css": "/MasterClass-assignment/static/media/STARWARS.3f085be9.ttf",
     "static/media/SfDistantGalaxyOutline-xoeO.ttf": "/MasterClass-assignment/static/media/SfDistantGalaxyOutline-xoeO.9652b3f0.ttf",
     "static/media/logout.c4a635f6.svg": "/MasterClass-assignment/static/media/logout.c4a635f6.svg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.26bbad46.js",
     "static/js/2.0d660175.chunk.js",
-    "static/css/main.8ece0a2b.chunk.css",
-    "static/js/main.5a032bdc.chunk.js"
+    "static/css/main.bb402240.chunk.css",
+    "static/js/main.17aa9a5a.chunk.js"
   ]
 }
