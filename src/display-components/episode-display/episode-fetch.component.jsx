@@ -117,7 +117,7 @@ const EpisodeItemComponent=({myfilter,clickedId})=>{
             { 
                 <MenuItemEpisode  key={data.episode.id}  otherProps={data.episode}/>
             }   
-            <div style={{'padding':'20px','width':'100%',"height":edges?(`${edges.length/3*450*680/window.innerWidth+150}px`):"0px",
+            <div style={{'padding':'20px','width':'100%',"height":edges?(`${edges.length/3*350*680/window.innerWidth+120}px`):"0px",
           "background-color":themedark?"black":"gray"}}>
                 {edges                              
                       .map((edge) => (
